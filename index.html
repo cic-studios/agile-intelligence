@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en-US" style="background-image: -webkit-image-set('Logos/CIC_Background.png'); background-position: center center; background-size: cover; background-repeat: no-repeat;">
+    <head>
+        <title>CIC AI3 Kanban</title>
+        <link rel="icon" type="image/png" href="Logos/Ai_Icon.png">
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="cicbasics.css">
+        <link rel="stylesheet" href="style.css">    
+    </head>
+    <body class="flexCol flexCenter crossCenter" style="background-color:var(--mbaBackBright)">
+
+        <div id="loginScreen" class="flexCol flexBetween crossCenter fullScreenDiv" style="background-color: var(--mbaBackBright);">
+            <div id="logoStamps" class="flexRow flexAround crossCenter gap10" style="margin-top: 1rem; width: 100%;">
+                <a href="http://cicstudios.com" target="_blank"><img src="Logos/CIC_Black_Stamp.png" style="height: 5vh; max-height: 10vw;" /></a>
+                <a href="https://mba30.com" target="_blank"><img src="Logos/MBA_Black_Stamp.png" style="height: 5vh; max-height: 10vw;" /></a>
+            </div>
+            <div id="loginDiv" class="flexCol flexCenter crossCenter" style="gap: 2vh; width: 50vw; max-width: 50vh;">
+                <img src="Logos/Ai.png" style="height: auto; max-height: 50vh; width:max-content; max-width: 75vw;"/>
+                <div id="loginInputs" class="flexRow flexBetween crossCenter gap10" style="width: 50vw; max-width: 50vh;">  
+                        <input type="text" placeholder="Username" required style="font-size: 2vh; height: 2.5vh; border-radius: 1vh; padding: 0 1vh; width: 21vw; max-width: 21vh;">
+                        <input type="password" placeholder="Password" required style="font-size: 2vh; height: 2.5vh; border-radius: 1vh; padding: 0 1vh; width: 21vw; max-width: 21vh;">
+                </div>
+                <button type="submit" onclick="login()" style=" cursor: pointer; font-size: 2vh; height: 5vh; border-radius: 2vh; padding: 0 2vh; border: 3px solid var(--mbaLogoPurple);">Login</button>
+                <div class="flexRow flexBetween crossCenter gap10" style="width: 50vw; max-width: 50vh;">
+                    <a href="#" class="forgotPassword" style="color: var(--mbaLogoPurple); font-size: 2vh; width: 20vw; max-width: 20vh; text-align: center;" onclick="ShowForgotPassword()">Forgot Password?</a>    
+                    <a href="#" class="createAccount" style="color: var(--mbaLogoPurple); font-size: 2vh; width: 20vw; max-width: 20vh; text-align: center;" onclick="ShowCreateAccount()">Create Account</a>
+                </div>
+            </div>
+            <div id="copyrightDiv" class="flexCol flexCenter crossCenter" style="font-size: 1.5vh; font-weight: bold;">©2024 CIC Studios</div>
+        </div>
+
+        <div id="IntroLogosDiv" class="logoDisable" style="display: none;">
+            <div id="cicBackground" class="flexCol flexCenter crossCenter" style=" position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; overflow: hidden;">
+                <div class="cicBackground" style="height:100%; width: 100%; background-image: -webkit-image-set('Logos/CIC_Background.png'); background-position: center center; background-size: cover; background-repeat: no-repeat;"></div>
+            </div>
+            <div id="cicLogoHeart" class="flexCol flexCenter crossCenter" style="opacity: 1; position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; overflow: hidden;">
+                <img src="Logos/tCIC_Heart.png" class="cicHeart" style="height: 100%" />
+            </div>
+            <div id="cicLogoCube" class="flexCol flexCenter crossCenter" style="opacity: 1; position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; overflow: hidden;">
+                <img src="Logos/tCIC_CatCube.png" class="cicCube" style="height: 100%" />
+            </div>
+            <div id="cicLogoEyes" class="flexCol flexCenter crossCenter" style="opacity: 1; position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; overflow: hidden;">
+                <img src="Logos/tCIC_CatEyes.png" class="cicEyes" style="height: 100%" />
+            </div>
+            <div id="cicTextCube" class="flexCol flexCenter crossCenter" style="opacity: 1; position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; overflow: hidden;">
+                <img src="Logos/tCIC_TextCube.png" class="cicCatInCube" style="height: 100%" />
+            </div>
+            <div id="cicTextHeart" class="flexCol flexCenter crossCenter" style="opacity: 1; position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; overflow: hidden;">
+                <img src="Logos/tCIC_TextHeart.png" class="cicStudios" style="height: 100%" />
+            </div>
+            <div id="cicLogoWhite" class="flexCol flexCenter crossCenter" style="position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; overflow: hidden;">
+                <img src="Logos/tCIC_WhiteLogo.png" class="cicWhite" style="height: 100%" />
+            </div>
+            <div id="mbaPurple" class="flexCol flexCenter crossCenter" style="opacity: 1; position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; overflow: hidden;">
+                <img src="Logos/MBA_Purple.png" class="mbaPurple" style="height: 100%" />
+            </div>
+            <div id="mbaColor" class="flexCol flexCenter crossCenter" style="opacity: 1; position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; overflow: hidden;">
+                <img src="Logos/MBA_Color.png" class="mbaColor" style="height: 100%" />
+            </div>
+            <div id="mbaText" class="flexCol flexCenter crossCenter" style="opacity: 1; position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; overflow: hidden;">
+                <img src="Logos/MBA_Text.png" class="mbaText" style="height: 100%" />
+            </div>
+            <div id="mbaWhite" class="flexCol flexCenter crossCenter" style="opacity: 1; position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; overflow: hidden;">
+                <img src="Logos/MBA_White.png" class="mbaWhite" style="height: 100%" />
+            </div>
+        </div><!--End of Intro Logo Divs-->
+
+        <script src="app.js"></script>
+    </body>
+</html>

@@ -1,0 +1,404 @@
+* { margin: 0; padding: 0;}
+
+/*    *{outline: 2px solid orangered;}*/
+.debug1{ outline: 1px solid red; color:red; background-color:black; opacity:1; }
+.debug2{ outline: 1px solid lime; color:lime; background-color:black; opacity:1; }
+.debug3{ outline: 1px solid dodgerblue; color:dodgerblue; background-color:black; opacity:1; }
+.debug4{ outline: 1px solid cyan; color:cyan; background-color:black; opacity:1; }
+.debug5{ outline: 1px solid magenta; color:magenta; background-color:black; opacity:1; }
+.debug6{ outline: 1px solid yellow; color:yellow; background-color:black; opacity:1; }
+
+.flexHide{ display:none; }
+.flexRow{ display:flex; flex-direction:row; }
+.flexCol{ display:flex; flex-direction:column; }
+.flexStart{ justify-content:flex-start; }
+.flexCenter{ justify-content:center; }
+.flexEnd{ justify-content:flex-end; }
+.flexBetween{ justify-content:space-between; }
+.flexAround{ justify-content:space-around; }
+.flexEvenly{ justify-content: space-evenly; }
+.flexStretch{ justify-content: stretch;}
+.flexNormal{ justify-content: normal; }
+
+.crossStretch{ align-items:stretch; }
+.crossStart{ align-items:flex-start; }
+.crossCenter{ align-items:center; }
+.crossEnd{ align-items:flex-end; }
+.crossBaseline{ align-items:baseline; }
+.crossNormal{ align-items:normal; }
+
+.flowWrap{ flex-wrap:wrap; }
+.flowNoWrap{ flex-wrap:nowrap; }
+.flowStart{ align-content:flex-start; }
+.flowCenter{ align-content:center; }
+.flowEnd{ align-content:flex-end; }
+.flowBetween{ align-content:space-between; }
+.flowAround{ align-content:space-around; }
+.flowEvenly{ align-content: space-evenly; }
+.flowStretch{ align-content:stretch; }
+.flowBaseline{ align-content:baseline; }
+.flowNormal{ align-content:normal; }
+
+.selfFlexGrow{ flex:1; } /*flex-grow:1; flex-shrink:1; flex-basis: 0%;*/
+.selfFlexGrow2{ flex:2; }
+.selfFlexGrow3{ flex:3; }
+.selfFlexNoGrow{ flex:0; } /*  1 auto; } /* DEFAULT! flex-grow:0 flex-shrink:1 flex-basis:auto*/
+.selfFlexShrink{ flex-shrink:1; }
+.selfFlexShrink2{ flex-shrink:2; }
+.selfFlexShrink3{ flex-shrink:3; }
+.selfFlexNoShrink{ flex-shrink:0; }
+
+.selfCrossStretch{ align-self:stretch; }
+.selfCrossStart{ align-self:flex-start; }
+.selfCrossCenter{ align-self:center; }
+.selfCrossEnd{ align-self:flex-end; }
+.selfCrossBaseline{ align-self:baseline; }
+.selfCrossNormal{ align-self:normal; }
+.selfCrossAuto{ align-self:auto; }
+
+.margin10{ margin:10px 10px; }
+.margin5{ margin:5px 5px; }
+.pad10{ padding:10px 10px; }
+.pad5{ padding:5px 5px; }
+.gap10{ gap:10px 10px; } /*row-gap:10px column-gap:10px*/
+.gap5{ gap:5px 5px; }
+.gapNormal{ gap:normal normal; }
+
+:root 
+{
+    --mbaDarkPurple:#211741;
+    --mbaLogoPurple:#211A58;
+    --mbaInputIndigo:#6F64AB;
+    --mbaLogoGold:#FFA800;
+    --mbaYeetYellow:#FFD508;
+    --mbaBackBright:#F1EFF9;
+
+    --cicBackDark:#171F27;
+    --cicFuxia1:#FF0066;
+    --cicFuxia2:#BF3069;
+    --cicFuxia3:#804059;
+    --cicCyan1:#00D2FF;
+    --cicCyan2:#3996AA;
+    --cicCyan3:#395055;
+    --cicYellow1:#FFE700;
+    --cicYellow2:#AA9F39;
+    --cicYellow3:#555239;
+}
+
+.textOultineBlack{ text-shadow: 1px 1px 0px black, 1px -1px 0px black, -1px 1px 0px black, -1px -1px 0px black; }
+.textOutlineWhite{ text-shadow: 1px 1px 0px white, 1px -1px 0px white, -1px 1px 0px white, -1px -1px 0px white; }
+.textOutlinePurple{ text-shadow: 2px 2px 0px #211A58, 2px -2px 0px #211A58, -2px 2px 0px #211A58, -2px -2px 0px #211A58; }
+.textOutlineIndigo{ text-shadow: 2px 2px 0px #6F64AB, 2px -2px 0px #6F64AB, -2px 2px 0px #6F64AB, -2px -2px 0px #6F64AB; }
+.textOutlineGold{ text-shadow: 2px 2px 0px #FFA800, 2px -2px 0px #FFA800, -2px 2px 0px #FFA800, -2px -2px 0px #FFA800; }
+.textOutlineCyan{ text-shadow: 2px 2px 0px #44FFFF, 2px -2px 0px #44FFFF, -2px 2px 0px #44FFFF, -2px -2px 0px #44FFFF; }
+.textOutlineFuxia{ text-shadow: 2px 2px 0px #FF4466, 2px -2px 0px #FF4466, -2px 2px 0px #FF4466, -2px -2px 0px #FF4466; }
+
+.centerDiv
+{ 
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+}
+.fullScreenDiv
+{
+    position: relative;
+    top: 0px;
+    left: 0px;
+
+    height: auto;
+    min-height: 100%;
+    min-height: 100vh;
+    width: auto;
+    min-width: 100%;
+    min-width: 100vw;
+
+    margin: 0px;
+    padding: 0px;
+    gap: 0px;
+    overflow:auto;
+}
+
+::placeholder
+{
+    font-style:italic; 
+    color: var(--mbaDarkPurple);
+    /*background: var(--mbaTextDarkPurple);
+    background-color: var(--mbaInputIndigo);*/
+}
+html 
+{
+    height: 100%;
+    height: 100vh;
+    width: 100%;
+    width: 100vw;
+
+    margin: 0px;
+    padding: 0px;
+    gap: 0px;
+    overflow:auto;
+}
+body
+{
+    position: relative;
+    top: 0px;
+    left: 0px;
+
+    height: auto;
+    min-height: 100%;
+    min-height: 100vh;
+    width: auto;
+    min-width: 100%;
+    min-width: 100vw;
+
+    margin: 0px;
+    padding: 0px;
+    gap: 0px;
+    overflow:auto;
+}
+
+@keyframes animation-fill-cicup
+{
+    0%    { clip-path: polygon(50% 100%, 50% 100%, 50% 100%, 50% 50%, 50% 100%, 50% 100%, 50% 100%); }
+    25%    { clip-path: polygon(0% 100%, 0% 100%, 0% 100%, 50% 50%, 100% 100%, 100% 100%, 0% 100%); }
+    75%    { clip-path: polygon(0% 100%, 0% 0%, 0% 0%, 50% 50%, 100% 0%, 100% 0%, 100% 100%); }
+    100%    { clip-path: polygon(0% 100%, 0% 0%, 50% 0%, 50% 50%, 50% 0%, 100% 0%, 100% 100%); }
+}
+
+@keyframes animation-fill-cicdown
+{
+    0%    { clip-path: polygon(50% 0%, 50% 0%, 50% 0%, 50% 50%, 50% 0%, 50% 0%, 50% 0%); }
+    25%    { clip-path: polygon(0% 0%, 0% 0%, 0% 0%, 50% 50%, 100% 0%, 100% 0%, 0% 0%); }
+    75%    { clip-path: polygon(0% 0%, 0% 100%, 0% 100%, 50% 50%, 100% 100%, 100% 100%, 100% 0%); }
+    100%    { clip-path: polygon(0% 0%, 0% 100%, 50% 100%, 50% 50%, 50% 100%, 100% 100%, 100% 0%); }
+}
+
+@keyframes animation-fill-clockwise
+{
+    0%    { clip-path: polygon(50% 0%, 50% 50%, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%); }
+    12.5% { clip-path: polygon(50% 0%, 50% 50%, 100% 0%, 100% 0%, 100% 0%, 100% 0%, 100% 0%); }
+    37.5% { clip-path: polygon(50% 0%, 50% 50%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 0%); }
+    62.5% { clip-path: polygon(50% 0%, 50% 50%, 0% 100%, 0% 100%, 0% 100%, 100% 100%, 100% 0%); }
+    87.5% { clip-path: polygon(50% 0%, 50% 50%, 0% 0%, 0% 0%, 0% 100%, 100% 100%, 100% 0%); }
+    100%  { clip-path: polygon(50% 0%, 50% 50%, 50% 0%, 0% 0%, 0% 100%, 100% 100%, 100% 0%); }
+}
+@keyframes animation-fill-counterclockwise
+{
+    0%    { clip-path: polygon(50% 100%, 50% 50%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 50% 100%); }
+    12.5% { clip-path: polygon(50% 100%, 50% 50%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%); }
+    37.5% { clip-path: polygon(50% 100%, 50% 50%, 100% 0%, 100% 0%, 100% 0%, 100% 0%, 100% 100%); }
+    62.5% { clip-path: polygon(50% 100%, 50% 50%, 0% 0%, 0% 0%, 0% 0%, 100% 0%, 100% 100%); }
+    87.5% { clip-path: polygon(50% 100%, 50% 50%, 0% 100%, 0% 100%, 0% 0%, 100% 0%, 100% 100%); }
+    100%  { clip-path: polygon(50% 100%, 50% 50%, 50% 100%, 0% 100%, 0% 0%, 100% 0%, 100% 100%); }
+}
+@keyframes animation-fan-left
+{
+    0% { clip-path: polygon(100% 100%, 100% 0%, 100% 0%, 100% 0%);}
+    50% { clip-path: polygon(100% 100%, 100% 0%, 0% 0%, 0% 0%);}
+    100% { clip-path: polygon(100% 100%, 100% 0%, 0% 0%, 0% 100%);}
+}
+@keyframes animation-fan-right
+{
+    0% { clip-path: polygon(0% 100%, 0% 0%, 0% 0%, 0% 0%);}
+    50% { clip-path: polygon(0% 100%, 0% 0%, 100% 0%, 100% 0%);}
+    100% { clip-path: polygon(0% 100%, 0% 0%, 100% 0%, 100% 100%);}
+}
+@keyframes animation-fill-right
+{
+    0%    { clip-path: polygon(0% 100%, 0% 0%, 0% 0%, 0% 100%); }
+    100%    { clip-path: polygon(0% 100%, 0% 0%, 100% 0%, 100% 100%); }
+}
+@keyframes animation-fill-left
+{
+    0%    { clip-path: polygon(100% 100%, 100% 0%, 100% 0%, 100% 100%); }
+    100%    { clip-path: polygon(100% 100%, 100% 0%, 0% 0%, 0% 100%); }
+}
+@keyframes animation-fill-down
+{
+    0%    { clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%); }
+    100%    { clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); }
+}
+@keyframes animation-fill-up
+{
+    0%    { clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%); }
+    100%    { clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%); }
+}
+@keyframes animation-fade-out
+{
+    0%    { opacity: 1; }
+    100%    { opacity: 0; }
+}
+@keyframes animation-fade-in
+{
+    0%    { opacity: 0; }
+    100%    { opacity: 1; }
+}
+@keyframes animation-movein-down
+{
+    0%    { transform: translate(0%, -100%); }
+    100%    { transform: translate(0%, 0%); }
+}
+@keyframes animation-movein-up
+{
+    0%    { transform: translate(0%, 100%); }
+    100%    { transform: translate(0%, 0%); }
+}
+@keyframes animation-scale-grow
+{
+    0%    { transform: scale(0); }
+    95%    { transform: scale(1.05); }
+    100%    { transform: scale(1); }
+}
+@keyframes animation-scale-shrink
+{
+    0%    { transform: scale(1); }
+    100%    { transform: scale(0); }
+}
+@keyframes animation-scale-growH
+{
+    0%    { transform: scaleX(0); }
+    95%    { transform: scaleX(1.05); }
+    100%    { transform: scaleX(1); }
+}
+@keyframes animation-scale-shrinkH
+{
+    0%    { transform: scaleX(1); }
+    100%    { transform: scaleX(0); }
+}
+@keyframes animation-beat
+{
+    0%    { transform: scale(1); }
+    25%    { transform: scale(1.2); }
+    50%    { transform: scale(1); }
+    75%    { transform: scale(1.2); }
+    100%    { transform: scale(1); }
+}
+@keyframes animation-disable
+{
+    0%    { display: flex; }
+    100%    { display: none; }
+}
+@keyframes animation-enable
+{
+    0%    { display: none; }
+    100%    { display: flex; }
+}
+
+
+
+.cicHeart
+{
+    opacity: 0;
+    /*clip-path: polygon(50% 100%, 50% 100%, 50% 100%, 50% 50%, 50% 100%, 50% 100%, 50% 100%);*/
+    -webkit-animation: animation-fade-in 0.25s, animation-beat 0.5s, animation-fade-out 0.125s;
+    animation: animation-fade-in 0.25s, animation-beat 0.5s, animation-fade-out 0.125s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+    animation-delay: 0.25s, 1s, 3.375s;
+}
+.cicCube
+{
+    opacity: 1;
+    clip-path: polygon(50% 0%, 50% 0%, 50% 0%, 50% 50%, 50% 0%, 50% 0%, 50% 0%);
+    -webkit-animation: animation-fill-cicdown 0.5s, animation-fade-out 0.125s;
+    animation: animation-fill-cicdown 0.5s, animation-fade-out 0.125s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    animation-delay: 1.5s, 3.375s;
+}
+.cicEyes
+{
+    opacity: 0;
+    -webkit-animation: animation-fade-in 0.5s, animation-fade-out 0.125s;
+    animation: animation-fade-in 0.5s, animation-fade-out 0.125s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+    animation-delay: 2s, 3.375s;
+}
+.cicStudios
+{
+    opacity: 1;
+    transform: scale(0);
+    -webkit-animation: animation-scale-grow 0.5s, animation-fade-out 0.125s;
+    animation: animation-scale-grow 0.5s, animation-fade-out 0.125s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    animation-delay: 2.5s, 3.375s;
+}
+.cicCatInCube
+{
+    opacity: 1;
+    transform: translate(0%, 100%);
+    -webkit-animation: animation-scale-growH 0.5s, animation-fade-out 0.125s;
+    animation: animation-scale-growH 0.5s, animation-fade-out 0.125s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    animation-delay: 2.5s, 3.375s;
+}
+.cicWhite
+{
+    opacity: 0;
+    -webkit-animation: animation-fade-in 0.125s, animation-fade-out 0.25s;
+    animation: animation-fade-in 0.125s, animation-fade-out 0.25s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    animation-delay: 3.375s, 5s;
+}
+
+.mbaPurple
+{
+    opacity: 1;
+    clip-path: polygon(0% 100%, 0% 0%, 0% 0%, 0% 0%);
+    -webkit-animation: animation-fill-right 1s, animation-fade-out 0.125s;
+    animation: animation-fill-right 1s, animation-fade-out 0.125s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    animation-delay: 5.25s, 8s;
+}
+.mbaColor
+{
+    opacity: 1;
+    clip-path: polygon(100% 100%, 100% 0%, 100% 0%, 100% 0%);
+    -webkit-animation: animation-fan-left 1s, animation-fade-out 0.125s;
+    animation: animation-fan-left 1s, animation-fade-out 0.125s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    animation-delay: 6.25s, 8s;
+}
+.mbaText
+{
+    opacity: 0;
+    -webkit-animation: animation-fade-in 0.5s, animation-fade-out 0.125s;
+    animation: animation-fade-in 0.5s, animation-fade-out 0.125s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    animation-delay: 7.25s, 8s;
+}
+.mbaWhite
+{
+    opacity: 0;
+    -webkit-animation: animation-fade-in 0.125s, animation-fade-out 0.5s;
+    animation: animation-fade-in 0.125s, animation-fade-out 0.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+    animation-delay: 8s, 9.5s;
+}
+.cicBackground
+{
+    /*opacity: 1;*/
+    -webkit-animation: animation-fade-out 0.5s;
+    animation: animation-fade-out 0.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+    animation-delay: 9.5s;
+}
+
+.logoDisable
+{
+    display: flex;
+    -webkit-animation: animation-disable 0.125s;
+    animation: animation-disable 0.125s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    animation-delay: 10s;
+}
