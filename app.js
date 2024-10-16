@@ -1,4 +1,10 @@
-const mbaLogo = document.getElementById("mbaLogo");
-const cicHeartLogo = document.getElementById("cicLogoHeart");
-const cicFillLogo = document.getElementById("cicLogoFull");
-
+const username = document.getElementById("username");
+const password = document.getElementById("password");
+const sessionID = document.getElementById("sessionID");
+const urlParams = new URLSearchParams(window.location.hash.slice(1));
+let user = urlParams.get('u');
+let pass = urlParams.get('p');
+let sess = urlParams.get('s');
+if (user) {username.value = user}
+if (pass) {password.value = pass}
+if (sess) {sessionID.value = sess;}
