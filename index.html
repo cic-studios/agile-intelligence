@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US" style="background-image: -webkit-image-set('Logos/CIC_Background.png'); background-position: center center; background-size: cover; background-repeat: no-repeat;">
+<html lang="en-US" class="cicRadialGradient"> <!--style="background-image: -webkit-image-set('Logos/CIC_Background.png'); background-position: center center; background-size: cover; background-repeat: no-repeat;"> -->
     <head>
         <title>CIC AI3 Kanban</title>
         <link rel="icon" type="image/png" href="Logos/Ai_Icon.png">
@@ -10,65 +10,114 @@
         <link rel="stylesheet" href="cicbasics.css">
         <link rel="stylesheet" href="style.css">    
     </head>
-    <body class="flexCol flexCenter crossCenter" style="background-color:var(--mbaBackBright)">
+    <body class="flexCol flexCenter crossCenter mbaRadialGradient" style="min-height: 100vh; min-width: 100vw;">
 
-        <div id="loginScreen" class="flexCol flexBetween crossCenter fullScreenDiv" style="background-color: var(--mbaBackBright);">
+        <div id="loginScreen" class="flexCol flexBetween crossCenter fullScreenDiv mbaRadialGradient" style="height: 100vh; width: 100vw;">
             <div id="logoStamps" class="flexRow flexAround crossCenter gap10" style="margin-top: 1rem; width: 100%;">
                 <a href="http://cicstudios.com" target="_blank"><img src="Logos/CIC_Black_Stamp.png" style="height: 5vh; max-height: 10vw;" /></a>
                 <a href="https://mba30.com" target="_blank"><img src="Logos/MBA_Black_Stamp.png" style="height: 5vh; max-height: 10vw;" /></a>
             </div>
-            <div id="loginDiv" class="flexCol flexCenter crossCenter" style="gap: 2vh; width: 50vw; max-width: 50vh;">
+            <div id="loginScreen" class="flexCol flexCenter crossCenter" style="gap: 2vh; width: 50vw; max-width: 50vh;">
                 <img src="Logos/Ai.png" style="height: auto; max-height: 50vh; width:max-content; max-width: 75vw;"/>
-                <input id="sessionID" type="text" placeholder="Session ID" required style="font-size: 2vh; height: 2.5vh; border-radius: 1vh; padding: 0 1vh; width: 48vw; max-width: 48vh;">
-                <div id="loginInputs" class="flexRow flexBetween crossCenter gap10" style="width: 50vw; max-width: 50vh;">  
-                        <input id="username" type="text" placeholder="Username" required style="font-size: 2vh; height: 2.5vh; border-radius: 1vh; padding: 0 1vh; width: 21vw; max-width: 21vh;">
-                        <input id="password" type="password" placeholder="Password" required style="font-size: 2vh; height: 2.5vh; border-radius: 1vh; padding: 0 1vh; width: 21vw; max-width: 21vh;">
+                <div class="flexRow flexBetween crossCenter" style="width: 50vw; max-width: 50vh;">
+                    <input id="sessionID" type="text" placeholder="Session ID" required style="font-size: 2vh; height: 2.5vh; border-radius: 1vh; padding: 0 1vh; width: 48vw; max-width: 48vh;">
                 </div>
-                <button type="submit" onclick="login()" style=" cursor: pointer; font-size: 2vh; height: 5vh; border-radius: 2vh; padding: 0 2vh; border: 3px solid var(--mbaLogoPurple);">Login</button>
-                <div class="flexRow flexBetween crossCenter gap10" style="width: 50vw; max-width: 50vh;">
-                    <a href="#" class="forgotPassword" style="color: var(--mbaLogoPurple); font-size: 2vh; width: 20vw; max-width: 20vh; text-align: center;" onclick="ShowForgotPassword()">Forgot Password?</a>    
-                    <a href="#" class="createAccount" style="color: var(--mbaLogoPurple); font-size: 2vh; width: 20vw; max-width: 20vh; text-align: center;" onclick="ShowCreateAccount()">Create Account</a>
+                <div style="width: 25vw; max-width: 25vh; height: 3px; background-color: var(--mbaLogoPurple); margin: 0vh; color: var(--mbaLogoPurple);"></div>
+                <!-- SESSION LOGIN UI -->
+                <div id="loginUI" class="flexCol flexBetween crossCenter gap10" style="font-size: 2vh; width: 50vw; max-width: 50vh;">
+                    <div class="flexRow flexBetween crossCenter" style="width: 50vw; max-width: 50vh;">  
+                        <input id="username" type="text" placeholder="Username" required style="font-size: 2vh; height: 2.5vh; border-radius: 1vh; padding: 0 1vh; width: 20vw; max-width: 20vh;">
+                        <input id="password" type="password" placeholder="Password" required style="font-size: 2vh; height: 2.5vh; border-radius: 1vh; padding: 0 1vh; width: 20vw; max-width: 20vh;">
+                    </div>
+                    <button type="submit" onclick="click_SessionLogin()" style=" cursor: pointer; font-size: 2vh; height: 4vh; border-radius: 2vh; padding: 0 2vh; border: 3px solid var(--mbaLogoPurple);">Login</button>
+                    <div class="flexRow flexBetween crossCenter gap10" style="width: 50vw; max-width: 50vh;">
+                        <a href="#" style="color: var(--mbaLogoPurple); font-size: 2vh; width: 20vw; max-width: 20vh; text-align: center;" onclick="click_ShowResetPassword()">Reset Password</a>
+                        <a href="#" style="color: var(--mbaLogoPurple); font-size: 2vh; width: 20vw; max-width: 20vh; text-align: center;" onclick="click_ShowCreateAccount()">Create Account</a>
+                    </div>
+                </div>
+                <!-- CREATE ACCOUNT UI -->
+                <div id="createAccountUI" class="flexCol flexBetween crossCenter gap10" style="display: none; font-size: 2vh; width: 50vw; max-width: 50vh;">
+                    <div class="flexRow flexBetween crossCenter" style="width: 50vw; max-width: 50vh;">
+                        <input id="accountEmail" type="text" placeholder="Email" required style="font-size: 2vh; height: 2.5vh; border-radius: 1vh; padding: 0 1vh; width: 48vw; max-width: 48vh;">
+                    </div>
+                    <div class="flexRow flexBetween crossCenter" style="width: 50vw; max-width: 50vh;">  
+                        <input id="createAccountName" type="text" placeholder="Account Name" required style="font-size: 2vh; height: 2.5vh; border-radius: 1vh; padding: 0 1vh; width: 20vw; max-width: 20vh;">
+                        <input id="accountPassword" type="password" placeholder="Account Password" required style="font-size: 2vh; height: 2.5vh; border-radius: 1vh; padding: 0 1vh; width: 20vw; max-width: 20vh;">
+                    </div>
+                    <div class="flexRow flexBetween crossCenter" style="width: 50vw; max-width: 50vh;">  
+                        <input id="displayName" type="text" placeholder="Display Name" required style="font-size: 2vh; height: 2.5vh; border-radius: 1vh; padding: 0 1vh; width: 20vw; max-width: 20vh;">
+                        <input id="confirmAccountPassword" type="password" placeholder="Confirm Password" required style="font-size: 2vh; height: 2.5vh; border-radius: 1vh; padding: 0 1vh; width: 20vw; max-width: 20vh;">
+                    </div>
+                    <button type="submit" onclick="click_CreateAccount()" style="cursor: pointer; font-size: 2vh; height: 2.5vh; border-radius: 2vh; padding: 0 2vh; border: 3px solid var(--mbaLogoPurple);">Create Account</button>
+                    <a href="#" style="color: var(--mbaLogoPurple); font-size: 2vh; width: 20vw; max-width: 20vh; text-align: center;" onclick="click_ShowSessionLogin()">Return to Login</a>
+                </div>
+                <!-- RESET PASSWORD UI -->
+                <div id="resetPasswordUI" class="flexCol flexBetween crossCenter gap10" style="display: none; font-size: 2vh; width: 50vw; max-width: 50vh;">
+                    <div style="font-size: 1.5vh; font-weight: bold; font-style: italic; color: var(--mbaLogoPurple);">Forgot User/Password?</div>
+                    <div class="flexRow flexCenter crossCenter" style="width: 50vw; max-width: 50vh;">  
+                        <input id="email" type="text" placeholder="Email" required style="font-size: 2vh; height: 2.5vh; border-radius: 1vh; padding: 0 1vh; width: 20vw; max-width: 20vh;">
+                        <button type="submit" onclick="click_SendUsername()" style="cursor: pointer; font-size: 2vh; height: 2.5vh; border-radius: 2vh; padding: 0 2vh; border: 3px solid var(--mbaLogoPurple);">Send User</button>
+                    </div>
+                    <div class="flexRow flexCenter crossCenter" style="width: 50vw; max-width: 50vh;">  
+                        <input id="recoverAccountName" type="text" placeholder="Username" required style="font-size: 2vh; height: 2.5vh; border-radius: 1vh; padding: 0 1vh; width: 20vw; max-width: 20vh;">
+                        <button type="submit" onclick="click_SendResetCode()" style="cursor: pointer; font-size: 2vh; height: 2.5vh; border-radius: 2vh; padding: 0 2vh; border: 3px solid var(--mbaLogoPurple);">Send Code</button>
+                    </div>
+                    <div style="font-size: 1.5vh; font-weight: bold; font-style: italic; color: var(--mbaLogoPurple);">Reset Password</div>
+                    <div class="flexRow flexBetween crossCenter" style="width: 50vw; max-width: 50vh;">  
+                        <input id="resetAccountName" type="text" placeholder="Username" required style="font-size: 2vh; height: 2.5vh; border-radius: 1vh; padding: 0 1vh; width: 20vw; max-width: 20vh;">
+                        <input id="newPassword" type="password" placeholder="New Password" required style="font-size: 2vh; height: 2.5vh; border-radius: 1vh; padding: 0 1vh; width: 20vw; max-width: 20vh;">
+                    </div>
+                    <div class="flexRow flexBetween crossCenter" style="width: 50vw; max-width: 50vh;">  
+                        <input id="oldPassword" type="password" placeholder="Reset Code" required style="font-size: 2vh; height: 2.5vh; border-radius: 1vh; padding: 0 1vh; width: 20vw; max-width: 20vh;">
+                        <input id="confirmNewPassword" type="password" placeholder="Confirm Password" required style="font-size: 2vh; height: 2.5vh; border-radius: 1vh; padding: 0 1vh; width: 20vw; max-width: 20vh;">
+                    </div>
+                    <button type="submit" onclick="click_ChangePassword()" style="cursor: pointer; font-size: 2vh; height: 2.5vh; border-radius: 2vh; padding: 0 2vh; border: 3px solid var(--mbaLogoPurple);">Change Password</button>
+                    <a href="#" style="color: var(--mbaLogoPurple); font-size: 2vh; width: 20vw; max-width: 20vh; text-align: center;" onclick="click_ShowSessionLogin()">Return to Login</a>
                 </div>
             </div>
-            <div id="copyrightDiv" class="flexCol flexCenter crossCenter" style="font-size: 1.5vh; font-weight: bold;">©2024 CIC Studios</div>
+            <div id="copyrightDiv" class="flexCol flexCenter crossCenter" style="font-size: 1.5vh; font-weight: bold; cursor: pointer;" onclick="RestartIntroAnimations()">©2024 CIC Studios</div>
         </div>
-
-        <div id="IntroLogosDiv" class="logoDisable">
-            <div id="cicBackground" class="flexCol flexCenter crossCenter" style=" position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; overflow: hidden;">
-                <div class="cicBackground" style="height:100%; width: 100%; background-image: -webkit-image-set('Logos/CIC_Background.png'); background-position: center center; background-size: cover; background-repeat: no-repeat;"></div>
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+        <!-- INTRO LOGOS -->
+        <div id="IntroLogosCONTAINER" class="flexCol flexCenter crossCenter" style=" position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; overflow: hidden;">
+            <div id="cicLogoBackground" class="flexCol flexCenter crossCenter" style=" position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; overflow: hidden;">
+                <div id="IntroBackgroundDIV" class="cicBackground cicRadialGradient flexCol flexEnd crossCenter" style="height:100%; width: 100%;">
+                    <div id="IntroLoadingTXT" class="cicLoading" style="font-size: 5vw; font-weight: bold; color: #88FFFF">Loading...</div>
+                </div>
             </div>
-            <div id="cicLogoHeart" class="flexCol flexCenter crossCenter" style="opacity: 1; position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; overflow: hidden;">
-                <img src="Logos/tCIC_Heart.png" class="cicHeart" style="height: 100%" />
+            <div id="cicLogoHeart" class="flexCol flexCenter crossCenter" style="position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; overflow: hidden;">
+                <img id="IntroHeartIMG" src="Logos/tCIC_Heart.png" class="cicHeart" style="height: 100%" />
             </div>
-            <div id="cicLogoCube" class="flexCol flexCenter crossCenter" style="opacity: 1; position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; overflow: hidden;">
-                <img src="Logos/tCIC_CatCube.png" class="cicCube" style="height: 100%" />
+            <div id="cicLogoCube" class="flexCol flexCenter crossCenter" style="position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; overflow: hidden;">
+                <img id="IntroCubeIMG" src="Logos/tCIC_CatCube.png" class="cicCube" style="height: 100%" />
             </div>
-            <div id="cicLogoEyes" class="flexCol flexCenter crossCenter" style="opacity: 1; position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; overflow: hidden;">
-                <img src="Logos/tCIC_CatEyes.png" class="cicEyes" style="height: 100%" />
+            <div id="cicLogoEyes" class="flexCol flexCenter crossCenter" style="position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; overflow: hidden;">
+                <img id ="IntroEyesIMG" src="Logos/tCIC_CatEyes.png" class="cicEyes" style="height: 100%" />
             </div>
-            <div id="cicTextCube" class="flexCol flexCenter crossCenter" style="opacity: 1; position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; overflow: hidden;">
-                <img src="Logos/tCIC_TextCube.png" class="cicCatInCube" style="height: 100%" />
+            <div id="cicLogoCatInCube" class="flexCol flexCenter crossCenter" style="position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; overflow: hidden;">
+                <img id="IntroCatInCubeIMG" src="Logos/tCIC_TextCube.png" class="cicCatInCube" style="height: 100%" />
             </div>
-            <div id="cicTextHeart" class="flexCol flexCenter crossCenter" style="opacity: 1; position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; overflow: hidden;">
-                <img src="Logos/tCIC_TextHeart.png" class="cicStudios" style="height: 100%" />
+            <div id="cicLogoStudios" class="flexCol flexCenter crossCenter" style="position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; overflow: hidden;">
+                <img id="IntroStudiosIMG" src="Logos/tCIC_TextHeart.png" class="cicStudios" style="height: 100%" />
             </div>
             <div id="cicLogoWhite" class="flexCol flexCenter crossCenter" style="position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; overflow: hidden;">
-                <img src="Logos/tCIC_WhiteLogo.png" class="cicWhite" style="height: 100%" />
+                <img id="IntroWhiteCicIMG" src="Logos/tCIC_WhiteLogo.png" class="cicWhite" style="height: 100%" />
             </div>
-            <div id="mbaPurple" class="flexCol flexCenter crossCenter" style="opacity: 1; position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; overflow: hidden;">
-                <img src="Logos/MBA_Purple.png" class="mbaPurple" style="height: 100%" />
+            <div id="mbaLogoPurple" class="flexCol flexCenter crossCenter" style="position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; overflow: hidden;">
+                <img id="IntroPurpleIMG" src="Logos/MBA_Purple.png" class="mbaPurple" style="height: 100%" />
             </div>
-            <div id="mbaColor" class="flexCol flexCenter crossCenter" style="opacity: 1; position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; overflow: hidden;">
-                <img src="Logos/MBA_Color.png" class="mbaColor" style="height: 100%" />
+            <div id="mbaLogoColor" class="flexCol flexCenter crossCenter" style="position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; overflow: hidden;">
+                <img id="IntroColorIMG" src="Logos/MBA_Color.png" class="mbaColor" style="height: 100%" />
             </div>
-            <div id="mbaText" class="flexCol flexCenter crossCenter" style="opacity: 1; position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; overflow: hidden;">
-                <img src="Logos/MBA_Text.png" class="mbaText" style="height: 100%" />
+            <div id="mbaLogoText" class="flexCol flexCenter crossCenter" style="position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; overflow: hidden;">
+                <img id="IntroTextIMG" src="Logos/MBA_Text.png" class="mbaText" style="height: 100%" />
             </div>
-            <div id="mbaWhite" class="flexCol flexCenter crossCenter" style="opacity: 1; position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; overflow: hidden;">
-                <img src="Logos/MBA_White.png" class="mbaWhite" style="height: 100%" />
+            <div id="mbaLogoWhiteMba" class="flexCol flexCenter crossCenter" style="position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; overflow: hidden;">
+                <img id="IntroWhiteMbaIMG" src="Logos/MBA_White.png" class="mbaWhite" style="height: 100%" />
             </div>
-        </div><!--End of Intro Logo Divs-->
+        </div>
+        <!--End of Intro Logo Divs-->
 
-        <script src="app.js"></script>
+        <script defer src="app.js"></script>
     </body>
 </html>
