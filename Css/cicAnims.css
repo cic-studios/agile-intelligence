@@ -1,0 +1,253 @@
+@keyframes animation-fill-cicup
+{
+    0%    { clip-path: polygon(50% 100%, 50% 100%, 50% 100%, 50% 50%, 50% 100%, 50% 100%, 50% 100%); }
+    25%    { clip-path: polygon(0% 100%, 0% 100%, 0% 100%, 50% 50%, 100% 100%, 100% 100%, 0% 100%); }
+    75%    { clip-path: polygon(0% 100%, 0% 0%, 0% 0%, 50% 50%, 100% 0%, 100% 0%, 100% 100%); }
+    100%    { clip-path: polygon(0% 100%, 0% 0%, 50% 0%, 50% 50%, 50% 0%, 100% 0%, 100% 100%); }
+}
+
+@keyframes animation-fill-cicdown
+{
+    0%    { clip-path: polygon(50% 0%, 50% 0%, 50% 0%, 50% 50%, 50% 0%, 50% 0%, 50% 0%); }
+    25%    { clip-path: polygon(0% 0%, 0% 0%, 0% 0%, 50% 50%, 100% 0%, 100% 0%, 0% 0%); }
+    75%    { clip-path: polygon(0% 0%, 0% 100%, 0% 100%, 50% 50%, 100% 100%, 100% 100%, 100% 0%); }
+    100%    { clip-path: polygon(0% 0%, 0% 100%, 50% 100%, 50% 50%, 50% 100%, 100% 100%, 100% 0%); }
+}
+
+@keyframes animation-fill-clockwise
+{
+    0%    { clip-path: polygon(50% 0%, 50% 50%, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%); }
+    12.5% { clip-path: polygon(50% 0%, 50% 50%, 100% 0%, 100% 0%, 100% 0%, 100% 0%, 100% 0%); }
+    37.5% { clip-path: polygon(50% 0%, 50% 50%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 0%); }
+    62.5% { clip-path: polygon(50% 0%, 50% 50%, 0% 100%, 0% 100%, 0% 100%, 100% 100%, 100% 0%); }
+    87.5% { clip-path: polygon(50% 0%, 50% 50%, 0% 0%, 0% 0%, 0% 100%, 100% 100%, 100% 0%); }
+    100%  { clip-path: polygon(50% 0%, 50% 50%, 50% 0%, 0% 0%, 0% 100%, 100% 100%, 100% 0%); }
+}
+@keyframes animation-fill-counterclockwise
+{
+    0%    { clip-path: polygon(50% 100%, 50% 50%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 50% 100%); }
+    12.5% { clip-path: polygon(50% 100%, 50% 50%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%); }
+    37.5% { clip-path: polygon(50% 100%, 50% 50%, 100% 0%, 100% 0%, 100% 0%, 100% 0%, 100% 100%); }
+    62.5% { clip-path: polygon(50% 100%, 50% 50%, 0% 0%, 0% 0%, 0% 0%, 100% 0%, 100% 100%); }
+    87.5% { clip-path: polygon(50% 100%, 50% 50%, 0% 100%, 0% 100%, 0% 0%, 100% 0%, 100% 100%); }
+    100%  { clip-path: polygon(50% 100%, 50% 50%, 50% 100%, 0% 100%, 0% 0%, 100% 0%, 100% 100%); }
+}
+@keyframes animation-fan-left
+{
+    0% { clip-path: polygon(100% 100%, 100% 0%, 100% 0%, 100% 0%);}
+    50% { clip-path: polygon(100% 100%, 100% 0%, 0% 0%, 0% 0%);}
+    100% { clip-path: polygon(100% 100%, 100% 0%, 0% 0%, 0% 100%);}
+}
+@keyframes animation-fan-right
+{
+    0% { clip-path: polygon(0% 100%, 0% 0%, 0% 0%, 0% 0%);}
+    50% { clip-path: polygon(0% 100%, 0% 0%, 100% 0%, 100% 0%);}
+    100% { clip-path: polygon(0% 100%, 0% 0%, 100% 0%, 100% 100%);}
+}
+@keyframes animation-fill-right
+{
+    0%    { clip-path: polygon(0% 100%, 0% 0%, 0% 0%, 0% 100%); }
+    100%    { clip-path: polygon(0% 100%, 0% 0%, 100% 0%, 100% 100%); }
+}
+@keyframes animation-fill-left
+{
+    0%    { clip-path: polygon(100% 100%, 100% 0%, 100% 0%, 100% 100%); }
+    100%    { clip-path: polygon(100% 100%, 100% 0%, 0% 0%, 0% 100%); }
+}
+@keyframes animation-fill-down
+{
+    0%    { clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%); }
+    100%    { clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); }
+}
+@keyframes animation-fill-up
+{
+    0%    { clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%); }
+    100%    { clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%); }
+}
+@keyframes animation-fade-out
+{
+    0%    { opacity: 1; }
+    100%    { opacity: 0; }
+}
+@keyframes animation-fade-in
+{
+    0%    { opacity: 0; }
+    100%    { opacity: 1; }
+}
+@keyframes animation-movein-down
+{
+    0%    { transform: translate(0%, -100%); }
+    100%    { transform: translate(0%, 0%); }
+}
+@keyframes animation-movein-up
+{
+    0%    { transform: translate(0%, 100%); }
+    100%    { transform: translate(0%, 0%); }
+}
+@keyframes animation-scale-grow
+{
+    0%    { transform: scale(0); }
+    95%    { transform: scale(1.05); }
+    100%    { transform: scale(1); }
+}
+@keyframes animation-scale-shrink
+{
+    0%    { transform: scale(1); }
+    100%    { transform: scale(0); }
+}
+@keyframes animation-scale-growH
+{
+    0%    { transform: scaleX(0); }
+    95%    { transform: scaleX(1.05); }
+    100%    { transform: scaleX(1); }
+}
+@keyframes animation-scale-shrinkH
+{
+    0%    { transform: scaleX(1); }
+    100%    { transform: scaleX(0); }
+}
+@keyframes animation-beat
+{
+    0%    { transform: scale(1); }
+    25%    { transform: scale(1.2); }
+    50%    { transform: scale(1); }
+    75%    { transform: scale(1.2); }
+    100%    { transform: scale(1); }
+}
+@keyframes animation-disable
+{
+    0%    { display: flex; }
+    100%    { display: none; }
+}
+@keyframes animation-enable
+{
+    0%    { display: none; }
+    100%    { display: flex; }
+}
+
+
+.cicLoading_ANIM
+{
+    opacity: 1;
+    -webkit-animation: animation-fade-out 0.125s;
+    animation: animation-fade-out 0.125s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    animation-delay: 0.25s;
+}
+.cicHeart_ANIM
+{
+    opacity: 0;
+    -webkit-animation: animation-fade-in 0.25s, animation-beat 0.5s, animation-fade-out 0.125s;
+    animation: animation-fade-in 0.25s, animation-beat 0.5s, animation-fade-out 0.125s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+    animation-delay: 0.25s, 1s, 3.375s;
+}
+.cicCube_ANIM
+{
+    opacity: 1;
+    clip-path: polygon(50% 0%, 50% 0%, 50% 0%, 50% 50%, 50% 0%, 50% 0%, 50% 0%);
+    -webkit-animation: animation-fill-cicdown 0.5s, animation-fade-out 0.125s;
+    animation: animation-fill-cicdown 0.5s, animation-fade-out 0.125s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    animation-delay: 1.5s, 3.375s;
+}
+.cicEyes_ANIM
+{
+    opacity: 0;
+    -webkit-animation: animation-fade-in 0.5s, animation-fade-out 0.125s;
+    animation: animation-fade-in 0.5s, animation-fade-out 0.125s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+    animation-delay: 2s, 3.375s;
+}
+.cicStudios_ANIM
+{
+    opacity: 1;
+    transform: scale(0);
+    -webkit-animation: animation-scale-grow 0.5s, animation-fade-out 0.125s;
+    animation: animation-scale-grow 0.5s, animation-fade-out 0.125s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    animation-delay: 2.5s, 3.375s;
+}
+.cicCatInCube_ANIM
+{
+    opacity: 1;
+    transform: translate(0%, 100%);
+    -webkit-animation: animation-scale-growH 0.5s, animation-fade-out 0.125s;
+    animation: animation-scale-growH 0.5s, animation-fade-out 0.125s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    animation-delay: 2.5s, 3.375s;
+}
+.cicWhite_ANIM
+{
+    opacity: 0;
+    -webkit-animation: animation-fade-in 0.125s, animation-fade-out 0.25s;
+    animation: animation-fade-in 0.125s, animation-fade-out 0.25s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    animation-delay: 3.375s, 5s;
+}
+
+.mbaPurple_ANIM
+{
+    opacity: 1;
+    clip-path: polygon(0% 100%, 0% 0%, 0% 0%, 0% 0%);
+    -webkit-animation: animation-fill-right 1s, animation-fade-out 0.125s;
+    animation: animation-fill-right 1s, animation-fade-out 0.125s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    animation-delay: 5.25s, 8s;
+}
+.mbaColor_ANIM
+{
+    opacity: 1;
+    clip-path: polygon(100% 100%, 100% 0%, 100% 0%, 100% 0%);
+    -webkit-animation: animation-fan-left 1s, animation-fade-out 0.125s;
+    animation: animation-fan-left 1s, animation-fade-out 0.125s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    animation-delay: 6.25s, 8s;
+}
+.mbaText_ANIM
+{
+    opacity: 0;
+    -webkit-animation: animation-fade-in 0.5s, animation-fade-out 0.125s;
+    animation: animation-fade-in 0.5s, animation-fade-out 0.125s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    animation-delay: 7.25s, 8s;
+}
+.mbaWhite_ANIM
+{
+    opacity: 0;
+    -webkit-animation: animation-fade-in 0.125s, animation-fade-out 0.5s;
+    animation: animation-fade-in 0.125s, animation-fade-out 0.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+    animation-delay: 8s, 9.5s;
+}
+.cicBackground_ANIM
+{
+    opacity: 1;
+    -webkit-animation: animation-fade-out 0.5s;
+    animation: animation-fade-out 0.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+    animation-delay: 9.5s;
+}
+
+/*.logoDisable_ANIM
+{
+    opacity: 1;
+    display: flex;
+    -webkit-animation: animation-disable 0.125s;
+    animation: animation-disable 0.125s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    animation-delay: 10s;
+}*/
