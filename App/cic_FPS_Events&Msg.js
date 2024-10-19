@@ -83,7 +83,7 @@ document.body.appendChild(midScreenAlert);
 const copyrightDiv = document.getElementById("copyrightDiv");
 const copyrightMsg = "©2024 CIC Studios";
 const copyrightColor = 'var(--mbaDarkPurple)';
-let responseDiv = copyrightDiv;
+let responseDiv = null;
 let responseDefaultMsg = "";
 let responseDefaultColor = 'var(--mbaDarkPurple)';
 let responseBlinkColorOdd = 'var(--mbaDarkPurple)';
@@ -117,7 +117,7 @@ function UpdateMessageDiv()
 
 function cicMSG_ShowMessage(msg, defaultMsg="", targetDiv=midScreenAlert, duration=5.5, blinkInterval=0.5, colorEven="red", colorOdd="black", colorDefault="black")
 {
-    if(responseDiv!=targetDiv)
+    if(responseDiv && responseDiv!=targetDiv)
     {
         responseDiv.innerHTML = responseDefaultMsg;
         responseDiv.style.color = responseDefaultColor;

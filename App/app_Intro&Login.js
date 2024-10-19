@@ -184,7 +184,7 @@ function click_CreateAccount()
 
     if(PerformElementFieldCheck(sessionIDField, "a", "session ID") == false) return;
     const sessionIDparts = sessionIDField.value.split(":");
-    if (sessionIDparts.length<1 || sessionIDparts[0].length<1) {cicMSG_ShowMessage("Invalid session ID.", "", midScreenAlert, 5.5, 0.5, 'red', 'var(--mbaInputIndigo)', 'var(--mbaDarkPurple)'); return;}
+    if (sessionIDparts.length<1 || sessionIDparts[0] == "") {cicMSG_ShowMessage("Invalid session ID.", "", midScreenAlert, 5.5, 0.5, 'red', 'var(--mbaInputIndigo)', 'var(--mbaDarkPurple)'); return;}
     if(PerformElementFieldCheck(createAccountEmailField, "your", "email") == false) return;
     if(PerformElementFieldCheck(createAccountUsernameField, "your", "username") == false) return;
     if(PerformElementFieldCheck(createAccountDisplaynameField, "your", "display name") == false) return;
@@ -196,8 +196,6 @@ function click_CreateAccount()
     const createAccountData = 
     {
         serverID: sessionIDparts[0],
-        sessionID: sessionIDparts[1],
-        sessionNum: sessionIDparts[2],
         email: createAccountEmailField.value,
         username: createAccountUsernameField.value,
         password: createAccountPasswordField.value,
@@ -213,14 +211,12 @@ function click_SendUsername()
 
     if(PerformElementFieldCheck(sessionIDField, "a", "session ID") == false) return;
     const sessionIDparts = sessionIDField.value.split(":");
-    if (sessionIDparts.length<1 || sessionIDparts[0].length<1) {cicMSG_ShowMessage("Invalid session ID.", "", midScreenAlert, 5.5, 0.5, 'red', 'var(--mbaInputIndigo)', 'var(--mbaDarkPurple)'); return;}
+    if (sessionIDparts.length<1 || sessionIDparts[0] == "") {cicMSG_ShowMessage("Invalid session ID.", "", midScreenAlert, 5.5, 0.5, 'red', 'var(--mbaInputIndigo)', 'var(--mbaDarkPurple)'); return;}
     if(PerformElementFieldCheck(recoveryEmailField, "your", "email") == false) return;
 
     const recoverUsernameData = 
     {
         serverID: sessionIDparts[0],
-        sessionID: sessionIDparts[1],
-        sessionNum: sessionIDparts[2],
         email: recoveryEmailField.value
     };
 }
@@ -232,14 +228,12 @@ function click_SendResetCode()
 
     if(PerformElementFieldCheck(sessionIDField, "a", "session ID") == false) return;
     const sessionIDparts = sessionIDField.value.split(":");
-    if(sessionIDparts.length<1 || sessionIDparts[0].length<1) {cicMSG_ShowMessage("Invalid session ID.", "", midScreenAlert, 5.5, 0.5, 'red', 'var(--mbaInputIndigo)', 'var(--mbaDarkPurple)'); return;}
+    if(sessionIDparts.length<1 || sessionIDparts[0] == "") {cicMSG_ShowMessage("Invalid session ID.", "", midScreenAlert, 5.5, 0.5, 'red', 'var(--mbaInputIndigo)', 'var(--mbaDarkPurple)'); return;}
     if(PerformElementFieldCheck(recoveryUsernameField, "your", "username") == false) return;
 
     const recoverPasswordData = 
     {
         serverID: sessionIDparts[0],
-        sessionID: sessionIDparts[1],
-        sessionNum: sessionIDparts[2],
         username: recoveryUsernameField.value
     }
 }
@@ -254,7 +248,7 @@ function click_ChangePassword()
 
     if(PerformElementFieldCheck(sessionIDField, "a", "session ID") == false) return;
     const sessionIDparts = sessionIDField.value.split(":");
-    if(sessionIDparts.length<1 || sessionIDparts[0].length<1) {cicMSG_ShowMessage("Invalid session ID.", "", midScreenAlert, 5.5, 0.5, 'red', 'var(--mbaInputIndigo)', 'var(--mbaDarkPurple)'); return;}
+    if(sessionIDparts.length<1 || sessionIDparts[0] == "") {cicMSG_ShowMessage("Invalid session ID.", "", midScreenAlert, 5.5, 0.5, 'red', 'var(--mbaInputIndigo)', 'var(--mbaDarkPurple)'); return;}
     if(PerformElementFieldCheck(resetpassUsernameField, "your", "username") == false) return;
     if(PerformElementFieldCheck(resetpassResetCodeField, "your", "reset code") == false) return;
     if(PerformElementFieldCheck(resetpassNewPasswordField, "your", "new password") == false) return;
@@ -265,8 +259,6 @@ function click_ChangePassword()
     const resetPasswordData = 
     {
         serverID: sessionIDparts[0],
-        sessionID: sessionIDparts[1],
-        sessionNum: sessionIDparts[2],
         username: resetpassUsernameField.value,
         resetCode: resetpassResetCodeField.value,
         newPassword: resetpassNewPasswordField.value,
