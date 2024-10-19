@@ -137,13 +137,13 @@ function PerformElementFieldCheck(element, msgArticle, msgNoun)
 {
     if(!element.value)
     {
-        cicMSG_ShowMessage(copyrightDiv, "Please enter " + msgArticle + " " + msgNoun + ".", copyrightMsg, 5, 0.5, 'red', 'var(--mbaInputIndigo)', 'var(--mbaDarkPurple)');
+        cicMSG_ShowMessage("Please enter " + msgArticle + " " + msgNoun + ".", "", midScreenAlert, 5.5, 0.5, 'red', 'var(--mbaInputIndigo)', 'var(--mbaDarkPurple)');
         return false;
     }
     element.value = cicCutAndTrim(element.value);
-    if(element.length < 1)
+    if(element.value == "")
     {
-        cicMSG_ShowMessage(copyrightDiv, "Invalid " + msgNoun + ".", copyrightMsg, 5, 0.5, 'red', 'var(--mbaInputIndigo)', 'var(--mbaDarkPurple)');
+        cicMSG_ShowMessage("Invalid " + msgNoun + ".", "", midScreenAlert, 5.5, 0.5, 'red', 'var(--mbaInputIndigo)', 'var(--mbaDarkPurple)');
         return false;
     }
     return true;
@@ -157,7 +157,7 @@ function click_SessionLogin()
 
     if(PerformElementFieldCheck(sessionIDField, "a", "session ID") == false) return;
     const sessionIDparts = sessionIDField.value.split(":");
-    if (sessionIDparts.length !== 3) {cicMSG_ShowMessage(copyrightDiv, "Invalid session ID.", copyrightMsg, 5, 0.5, 'red', 'var(--mbaInputIndigo)', 'var(--mbaDarkPurple)'); return;}
+    if (sessionIDparts.length !== 3) {cicMSG_ShowMessage("Invalid session ID.", "", midScreenAlert, 5.5, 0.5, 'red', 'var(--mbaInputIndigo)', 'var(--mbaDarkPurple)'); return;}
     if(PerformElementFieldCheck(usernameField, "your", "username") == false) return;
     if(PerformElementFieldCheck(passwordField, "your", "password") == false) return;
 
@@ -184,14 +184,14 @@ function click_CreateAccount()
 
     if(PerformElementFieldCheck(sessionIDField, "a", "session ID") == false) return;
     const sessionIDparts = sessionIDField.value.split(":");
-    if (sessionIDparts.length<1 || sessionIDparts[0].length<1) {cicMSG_ShowMessage(copyrightDiv, "Invalid session ID.", copyrightMsg, 5, 0.5, 'red', 'var(--mbaInputIndigo)', 'var(--mbaDarkPurple)'); return;}
+    if (sessionIDparts.length<1 || sessionIDparts[0].length<1) {cicMSG_ShowMessage("Invalid session ID.", "", midScreenAlert, 5.5, 0.5, 'red', 'var(--mbaInputIndigo)', 'var(--mbaDarkPurple)'); return;}
     if(PerformElementFieldCheck(createAccountEmailField, "your", "email") == false) return;
     if(PerformElementFieldCheck(createAccountUsernameField, "your", "username") == false) return;
     if(PerformElementFieldCheck(createAccountDisplaynameField, "your", "display name") == false) return;
     if(PerformElementFieldCheck(createAccountPasswordField, "your", "password") == false) return;
-    if(!createAccountConfirmPasswordField.value) {cicMSG_ShowMessage(copyrightDiv, "Please confirm your password.", copyrightMsg, 5, 0.5, 'red', 'var(--mbaInputIndigo)', 'var(--mbaDarkPurple)'); return;}
+    if(!createAccountConfirmPasswordField.value) {cicMSG_ShowMessage("Please confirm your password.", "", midScreenAlert, 5.5, 0.5, 'red', 'var(--mbaInputIndigo)', 'var(--mbaDarkPurple)'); return;}
     createAccountConfirmPasswordField.value = cicCutAndTrim(createAccountConfirmPasswordField.value);
-    if(createAccountConfirmPasswordField != createAccountPasswordField) {cicMSG_ShowMessage(copyrightDiv, "Passwords do not match.", copyrightMsg, 5, 0.5, 'red', 'var(--mbaInputIndigo)', 'var(--mbaDarkPurple)'); return;}
+    if(createAccountConfirmPasswordField != createAccountPasswordField) {cicMSG_ShowMessage("Passwords do not match.", "", midScreenAlert, 5.5, 0.5, 'red', 'var(--mbaInputIndigo)', 'var(--mbaDarkPurple)'); return;}
   
     const createAccountData = 
     {
@@ -213,7 +213,7 @@ function click_SendUsername()
 
     if(PerformElementFieldCheck(sessionIDField, "a", "session ID") == false) return;
     const sessionIDparts = sessionIDField.value.split(":");
-    if (sessionIDparts.length<1 || sessionIDparts[0].length<1) {cicMSG_ShowMessage(copyrightDiv, "Invalid session ID.", copyrightMsg, 5, 0.5, 'red', 'var(--mbaInputIndigo)', 'var(--mbaDarkPurple)'); return;}
+    if (sessionIDparts.length<1 || sessionIDparts[0].length<1) {cicMSG_ShowMessage("Invalid session ID.", "", midScreenAlert, 5.5, 0.5, 'red', 'var(--mbaInputIndigo)', 'var(--mbaDarkPurple)'); return;}
     if(PerformElementFieldCheck(recoveryEmailField, "your", "email") == false) return;
 
     const recoverUsernameData = 
@@ -232,7 +232,7 @@ function click_SendResetCode()
 
     if(PerformElementFieldCheck(sessionIDField, "a", "session ID") == false) return;
     const sessionIDparts = sessionIDField.value.split(":");
-    if(sessionIDparts.length<1 || sessionIDparts[0].length<1) {cicMSG_ShowMessage(copyrightDiv, "Invalid session ID.", copyrightMsg, 5, 0.5, 'red', 'var(--mbaInputIndigo)', 'var(--mbaDarkPurple)'); return;}
+    if(sessionIDparts.length<1 || sessionIDparts[0].length<1) {cicMSG_ShowMessage("Invalid session ID.", "", midScreenAlert, 5.5, 0.5, 'red', 'var(--mbaInputIndigo)', 'var(--mbaDarkPurple)'); return;}
     if(PerformElementFieldCheck(recoveryUsernameField, "your", "username") == false) return;
 
     const recoverPasswordData = 
@@ -254,13 +254,13 @@ function click_ChangePassword()
 
     if(PerformElementFieldCheck(sessionIDField, "a", "session ID") == false) return;
     const sessionIDparts = sessionIDField.value.split(":");
-    if(sessionIDparts.length<1 || sessionIDparts[0].length<1) {cicMSG_ShowMessage(copyrightDiv, "Invalid session ID.", copyrightMsg, 5, 0.5, 'red', 'var(--mbaInputIndigo)', 'var(--mbaDarkPurple)'); return;}
+    if(sessionIDparts.length<1 || sessionIDparts[0].length<1) {cicMSG_ShowMessage("Invalid session ID.", "", midScreenAlert, 5.5, 0.5, 'red', 'var(--mbaInputIndigo)', 'var(--mbaDarkPurple)'); return;}
     if(PerformElementFieldCheck(resetpassUsernameField, "your", "username") == false) return;
     if(PerformElementFieldCheck(resetpassResetCodeField, "your", "reset code") == false) return;
     if(PerformElementFieldCheck(resetpassNewPasswordField, "your", "new password") == false) return;
-    if(!resetpassConfirmNewPasswordField.value) {cicMSG_ShowMessage(copyrightDiv, "Please confirm your new password.", copyrightMsg, 5, 0.5, 'red', 'var(--mbaInputIndigo)', 'var(--mbaDarkPurple)'); return;}
+    if(!resetpassConfirmNewPasswordField.value) {cicMSG_ShowMessage("Please confirm your new password.", "", midScreenAlert, 5.5, 0.5, 'red', 'var(--mbaInputIndigo)', 'var(--mbaDarkPurple)'); return;}
     resetpassConfirmNewPasswordField.value = cicCutAndTrim(resetpassConfirmNewPasswordField.value);
-    if(resetpassConfirmNewPasswordField != resetpassNewPasswordField) {cicMSG_ShowMessage(copyrightDiv, "Passwords do not match.", copyrightMsg, 5, 0.5, 'red', 'var(--mbaInputIndigo)', 'var(--mbaDarkPurple)'); return;}
+    if(resetpassConfirmNewPasswordField != resetpassNewPasswordField) {cicMSG_ShowMessage("Passwords do not match.", "", midScreenAlert, 5.5, 0.5, 'red', 'var(--mbaInputIndigo)', 'var(--mbaDarkPurple)'); return;}
 
     const resetPasswordData = 
     {

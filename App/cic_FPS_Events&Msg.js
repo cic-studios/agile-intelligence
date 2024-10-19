@@ -68,6 +68,17 @@ function cicFPS_MillisecondsSinceStart()
 
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
+const midScreenAlert = document.createElement("div");
+midScreenAlert.id = "midScreenMessageAlert";
+midScreenAlert.className = "centerDiv textLoadingGlow";
+midScreenAlert.style.fontSize = "2vw";
+midScreenAlert.style.fontWeight = "bolder";
+midScreenAlert.style.textAlign = "center";
+midScreenAlert.style.padding = "20px 20px";
+midScreenAlert.style.overflow = "hidden";
+midScreenAlert.style.pointerEvents = "none";
+midScreenAlert.style.zIndex = "1000";
+document.body.appendChild(midScreenAlert);
 
 const copyrightDiv = document.getElementById("copyrightDiv");
 const copyrightMsg = "©2024 CIC Studios";
@@ -75,8 +86,8 @@ const copyrightColor = 'var(--mbaDarkPurple)';
 let responseDiv = copyrightDiv;
 let responseDefaultMsg = "";
 let responseDefaultColor = 'var(--mbaDarkPurple)';
-let responseBlinkColorOdd = 'var(--mbaInputIndigo)';
-let responseBlinkColorEven = 'white';
+let responseBlinkColorOdd = 'var(--mbaDarkPurple)';
+let responseBlinkColorEven = 'var(--mbaInputIndigo)';
 let responseBlinkInterval = 0;
 let responseBlinkTimeout = 0;
 let responseBlinkCount = 0;
@@ -104,7 +115,7 @@ function UpdateMessageDiv()
     }
 }
 
-function cicMSG_ShowMessage(targetDiv, msg, defaultMsg="", duration=5, blinkInterval=0, colorEven="white", colorOdd="black", colorDefault="black")
+function cicMSG_ShowMessage(msg, defaultMsg="", targetDiv=midScreenAlert, duration=5.5, blinkInterval=0.5, colorEven="red", colorOdd="black", colorDefault="black")
 {
     if(responseDiv!=targetDiv)
     {
