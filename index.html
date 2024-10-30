@@ -16,7 +16,7 @@
         <!-- SESSION SCREEN -->
         <div id="sessionScreen" class="flexCol flexBetween crossCenter fullScreenDiv mbaRadialGradient" style="gap: 1vh; height: 100vh; width: 100vw; position: absolute; top: 0; left: 0;">
             <div id="sessionTitleBar" class="flexRow flexAround crossCenter" style="width: 80vw; margin-top: 1vh; font-weight: bold; font-size: 3vh; color: var(--mbaLogoPurple); text-align: center;">
-                <div>Session Title</div>
+                <div>Session : Halloween</div>
             </div>
             <!-- SESSION INFO -->
             <div id="infoContainer" class="flexRow flexBetween crossCenter" style="gap: 2%; width: 80vw;">
@@ -59,14 +59,14 @@
                     <div id="user1" class="flexRow flexBetween crossCenter margin5 userToggle userToggleFacilitator userToggleOn" style = "width: 10vw; cursor: pointer; background-color: var(--mbaLogoPurple);" onclick="ToggleUser(0)">
                         <div class="flexCol flexAround crossCenter selfFlexGrow">
                             <div id="nameUser1">César</div>
-                            <div id="statusUser1" style = "color: red">not ready</div>
+                            <div id="statusUser1" style = "color: lime">ready</div>
                         </div>
                         <div class="pad5"><img id="cardUser1" src="Cards/11.png" style="height: 5vh;"></div>
                     </div>
                     <div id="user2" class="flexRow flexBetween crossCenter margin5 userToggle userToggleOff" style = "width: 10vw; cursor: pointer; background-color: var(--mbaLogoPurple);" onclick="ToggleUser(1)">
                         <div class="flexCol flexAround crossCenter selfFlexGrow">
                             <div id="nameUser2">Carlos</div>
-                            <div id="statusUser2" style = "color: lime">ready</div>
+                            <div id="statusUser2" style = "color: red">not ready</div>
                         </div>
                         <div class="pad5"><img id="cardUser1" src="Cards/33.png" style="height: 5vh;"></div>
                     </div>
@@ -81,36 +81,36 @@
                     Queue
                     <div id="colBox1" class="flexCol flexStart crossCenter containerBorder selfFlexGrow selfCrossStretch" style="height: 100%; width: 100%;">
                         <div id="task1" class="flexCol flexStart crossCenter containerBorder margin5" style="min-height: 9vw; width: 18vw; background-color: var(--mbaLogoPurple); color: var(--mbaBackBright); font-size: 2vh;">
-                            <div><div id="titleTask1">Transfer</div></div>
+                            <div class = "flexCol flexCenter crossCenter selfCrossStretch taskBoxBorders"><div id="titleTask1">Transfer</div></div>
                             <div class="flexRow flexBetween crossCenter selfCrossStretch">
-                                <div id="numTask1" style="padding: 10px; font-size: 3vh; font-weight: bold;">3</div>
-                                <div class ="flexCol flexAround crossCenter selfFlexGrow selfCrossStretch" style="font-size: 1.5vh;">
+                                <div id="numTask1" class="taskBoxBorders" style="padding: 10px; font-size: 3vh; font-weight: bold;">3</div>
+                                <div class ="flexCol flexAround crossCenter selfFlexGrow selfCrossStretch taskBoxBorders" style="font-size: 1.5vh;">
                                     <div id="ownerTask1" class="selfCrossStretch" style="text-align: center;">Owner: none</div>
                                     <div id="statusTask1" class="selfCrossStretch" style="text-align: center;">Unblocked</div>
                                 </div>
                             </div>
-                            <div class="flexCol flexStart crossStart selfFlexGrow selfCrossStretch" style="text-align: left; font-size: 1.25vh;">
+                            <div class="flexCol flexStart crossStart selfFlexGrow selfCrossStretch taskBoxBorders" style="text-align: left; font-size: 1.25vh;">
                                 Pay with bank transfer.
                             </div>
-                            <div class="flexRow flexAround crossCenter selfCrossStretch" style="font-size: 1.125vh;">
+                            <div class="flexRow flexAround crossCenter selfCrossStretch taskBoxBorders" style="font-size: 1.125vh;">
                                 <div>Start:0</div>
                                 <div>Block:0</div>
                                 <div>Live:0</div>
                             </div>
                         </div>
                         <div id="task1" class="flexCol flexStart crossCenter containerBorder margin5" style="min-height: 9vw; width: 18vw; background-color: var(--mbaLogoPurple); color: var(--mbaBackBright); font-size: 2vh;">
-                            <div><div id="titleTask1">E-commerce</div></div>
+                            <div class = "flexCol flexCenter crossCenter selfCrossStretch taskBoxBorders"><div id="titleTask1">E-commerce</div></div>
                             <div class="flexRow flexBetween crossCenter selfCrossStretch">
-                                <div id="numTask1" style="padding: 10px; font-size: 3vh; font-weight: bold;">4</div>
-                                <div class ="flexCol flexAround crossCenter selfFlexGrow selfCrossStretch" style="font-size: 1.5vh;">
+                                <div id="numTask1" class="taskBoxBorders" style="padding: 10px; font-size: 3vh; font-weight: bold;">4</div>
+                                <div class ="flexCol flexAround crossCenter selfFlexGrow selfCrossStretch taskBoxBorders" style="font-size: 1.5vh;">
                                     <div id="ownerTask1" class="selfCrossStretch" style="text-align: center;">Owner: none</div>
                                     <div id="statusTask1" class="selfCrossStretch" style="text-align: center;">Unblocked</div>
                                 </div>
                             </div>
-                            <div class="flexCol flexStart crossStart selfFlexGrow selfCrossStretch" style="text-align: left; font-size: 1.25vh;">
+                            <div class="flexCol flexStart crossStart selfFlexGrow selfCrossStretch taskBoxBorders" style="text-align: left; font-size: 1.25vh;">
                                 Optimize integrated e-commerce.
                             </div>
-                            <div class="flexRow flexAround crossCenter selfCrossStretch" style="font-size: 1.125vh;">
+                            <div class="flexRow flexAround crossCenter selfCrossStretch taskBoxBorders" style="font-size: 1.125vh;">
                                 <div>Start:0</div>
                                 <div>Block:0</div>
                                 <div>Live:0</div>
@@ -122,36 +122,36 @@
                     Doing
                     <div id="colBox2" class="flexCol flexStart crossStart containerBorder selfFlexGrow selfCrossStretch" style="height: 100%; width: 100%;">
                         <div id="task1" class="flexCol flexStart crossCenter containerBorder margin5" style="min-height: 9vw; width: 18vw; background-color: var(--mbaLogoPurple); color: var(--mbaBackBright); font-size: 2vh;">
-                            <div><div id="titleTask1">Landing</div></div>
+                            <div class="flexCol flexCenter crossCenter selfCrossStretch taskBoxBorders"><div id="titleTask1">Landing</div></div>
                             <div class="flexRow flexBetween crossCenter selfCrossStretch">
-                                <div id="numTask1" style="padding: 10px; font-size: 3vh; font-weight: bold;">1</div>
-                                <div class ="flexCol flexAround crossCenter selfFlexGrow selfCrossStretch" style="font-size: 1.5vh;">
+                                <div id="numTask1" class="taskBoxBorders" style="padding: 10px; font-size: 3vh; font-weight: bold;">1</div>
+                                <div class ="flexCol flexAround crossCenter selfFlexGrow selfCrossStretch taskBoxBorders" style="font-size: 1.5vh;">
                                     <div id="ownerTask1" class="selfCrossStretch" style="text-align: center;">Owner: César</div>
                                     <div id="statusTask1" class="selfCrossStretch" style="text-align: center;">Unblocked</div>
                                 </div>
                             </div>
-                            <div class="flexCol flexStart crossStart selfFlexGrow selfCrossStretch" style="text-align: left; font-size: 1.25vh;">
+                            <div class="flexCol flexStart crossStart selfFlexGrow selfCrossStretch taskBoxBorders" style="text-align: left; font-size: 1.25vh;">
                                 Awesome landing page.
                             </div>
-                            <div class="flexRow flexAround crossCenter selfCrossStretch" style="font-size: 1.125vh;">
+                            <div class="flexRow flexAround crossCenter selfCrossStretch taskBoxBorders" style="font-size: 1.125vh;">
                                 <div>Start:0</div>
                                 <div>Block:0</div>
                                 <div>Live:0</div>
                             </div>
                         </div>
                         <div id="task1" class="flexCol flexStart crossCenter containerBorder margin5" style="min-height: 9vw; width: 18vw; background-color: var(--mbaLogoPurple); color: var(--mbaBackBright); font-size: 2vh;">
-                            <div><div id="titleTask1">Profile</div></div>
+                            <div class="flexCol flexCenter crossCenter selfCrossStretch taskBoxBorders"><div id="titleTask1">Profile</div></div>
                             <div class="flexRow flexBetween crossCenter selfCrossStretch">
-                                <div id="numTask1" style="padding: 10px; font-size: 3vh; font-weight: bold;">2</div>
-                                <div class ="flexCol flexAround crossCenter selfFlexGrow selfCrossStretch" style="font-size: 1.5vh;">
+                                <div id="numTask1" class="taskBoxBorders" style="padding: 10px; font-size: 3vh; font-weight: bold;">2</div>
+                                <div class ="flexCol flexAround crossCenter selfFlexGrow selfCrossStretch taskBoxBorders" style="font-size: 1.5vh;">
                                     <div id="ownerTask1" class="selfCrossStretch" style="text-align: center;">Owner: Carlos</div>
                                     <div id="statusTask1" class="selfCrossStretch" style="text-align: center;">Unblocked</div>
                                 </div>
                             </div>
-                            <div class="flexCol flexStart crossStart selfFlexGrow selfCrossStretch" style="text-align: left; font-size: 1.25vh;">
+                            <div class="flexCol flexStart crossStart selfFlexGrow selfCrossStretch taskBoxBorders" style="text-align: left; font-size: 1.25vh;">
                                 Profile view.
                             </div>
-                            <div class="flexRow flexAround crossCenter selfCrossStretch" style="font-size: 1.125vh;">
+                            <div class="flexRow flexAround crossCenter selfCrossStretch taskBoxBorders" style="font-size: 1.125vh;">
                                 <div>Start:0</div>
                                 <div>Block:0</div>
                                 <div>Live:0</div>
