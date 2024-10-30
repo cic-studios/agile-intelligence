@@ -4,6 +4,8 @@ function RestartIntroAnimations()
 {
     const delay = 50;
     document.getElementById("IntroLogosCONTAINER").style.display = "flex";
+    document.getElementById("IntroLoadingTXT").style.display = "flex";
+    document.getElementById("IntroLoadingTXT").innerHTML = "Loading...";
     window.setTimeout(function(){document.getElementById("IntroLogosCONTAINER").style.display = "none";}, 10000);
     window.setTimeout(function(){document.getElementById("IntroLoadingTXT").style.display = "none";}, 250);
 
@@ -41,12 +43,29 @@ function GetHash()
     const user = urlParams.get('u');
     const pass = urlParams.get('p');
     const sess = urlParams.get('s');
-    const intro = urlParams.get('i');
+    const testMode = urlParams.get('t');
 
-    if(intro && (intro=="f" || intro=="false")) 
-        document.getElementById("IntroLogosCONTAINER").style.display = "none";
-    else
-        RestartIntroAnimations();
+    switch(testMode)
+    {
+        case 'login':
+        case '1':
+        {
+            document.getElementById("IntroLogosCONTAINER").style.display = "none";
+            break;
+        }
+        case 'session':
+        case '2':
+        {
+            document.getElementById("IntroLogosCONTAINER").style.display = "none";
+            document.getElementById("loginScreen").style.display = "none";
+            break;
+        }
+        default:
+        {
+            RestartIntroAnimations();
+            break;
+        }
+    }
 
     if(user) 
     {
@@ -263,5 +282,25 @@ function click_ChangePassword()
         resetCode: resetpassResetCodeField.value,
         newPassword: resetpassNewPasswordField.value,
         confirmPassword: resetpassConfirmNewPasswordField.value
+    }
+}
+
+
+
+function ToggleUser(userNum)
+{
+    const userList = document.querySelectorAll(".userToggle");
+    for(let i=0; i<userList.length; i++)
+    {
+        if(i == userNum)
+        {
+            userList[i].classList.add("userToggleOn");
+            userList[i].classList.remove("userToggleOff");
+        }
+        else
+        {
+            userList[i].classList.add("userToggleOff");
+            userList[i].classList.remove("userToggleOn");
+        }
     }
 }
