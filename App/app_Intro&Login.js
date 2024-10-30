@@ -188,6 +188,8 @@ function click_SessionLogin()
         username: usernameField.value,
         password: passwordField.value
     };
+
+    document.getElementById("loginScreen").style.display = "none";
 }
 
 
