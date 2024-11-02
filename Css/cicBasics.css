@@ -284,3 +284,10 @@ a:focus
 {
     box-shadow: 0 0 4px #00ff00;
 }
+
+.taskBoxBorders
+{
+    border-color: var(--mbaBackBright);
+    border-style: solid;
+    border-width: 1px;
+}
