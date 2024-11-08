@@ -180,16 +180,29 @@ function click_SessionLogin()
     if(PerformElementFieldCheck(usernameField, "your", "username") == false) return;
     if(PerformElementFieldCheck(passwordField, "your", "password") == false) return;
 
-    const sessionLoginData = 
-    {
-        serverID: sessionIDparts[0],
-        sessionID: sessionIDparts[1],
-        sessionNum: sessionIDparts[2],
-        username: usernameField.value,
-        password: passwordField.value
-    };
-
+    //const serverID = sessionIDparts[0];
+    const serverID = "AKfycbwcCbgh8BsOAdsJHj3T5sil2PoXKNftVYrkgxqBXAaZcjPvoUq_90zVJYDZVG_TULHX";
+    const rpcID = "sessionLogin";
+    const formData = new FormData();
+    formData.append("sessionID", sessionIDparts[1]);
+    formData.append("sessionNum", sessionIDparts[2]);
+    formData.append("username", usernameField.value);
+    formData.append("password", passwordField.value);
+    GoogleAppsScriptPost(serverID, rpcID, formData, responseCallback, callbackTempDataHolder=null)
     document.getElementById("loginScreen").style.display = "none";
+}
+
+function responseCallback(response)
+{
+    console.log(response);
+    if(response.status == "Ok")
+    {
+        cicMSG_ShowMessage(response.msg, "", midScreenAlert, 5.5, 0.5, 'green', 'var(--mbaInputIndigo)', 'var(--mbaDarkPurple)');
+    }
+    else
+    {
+        cicMSG_ShowMessage(response.msg, "", midScreenAlert, 5.5, 0.5, 'red', 'var(--mbaInputIndigo)', 'var(--mbaDarkPurple)');
+    }
 }
 
 

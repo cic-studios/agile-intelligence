@@ -1,4 +1,15 @@
 function cicCutAndTrim(string) { if(string) return string.replace(/(^\s+|\s+$)/gm,''); else return ''; }
+function WashAndTrimString(str, removeNewLine=true, removeTabs=true, arrRemove=['"', ',', ';', ':', '|'])
+{
+  for (let removeStr of arrRemove)
+    str = str.split(removeStr).join(' ');
+  if (removeTabs)
+    str = str.replace(/\t/g, '');
+  if (removeNewLine)
+    str = str.replace(/[\r\n]/g, '');
+  str = str.trim();
+  return str;
+}
 
 //120FPS is SIMULATING at 125 FPS         (+0.008/every8ms)
 //90FPS  is SIMULATING at 90.909090rp FPS (+0.011/every11ms)

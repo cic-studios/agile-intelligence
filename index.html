@@ -16,7 +16,9 @@
         <!-- SESSION SCREEN -->
         <div id="sessionScreen" class="flexCol flexBetween crossCenter fullScreenDiv mbaRadialGradient" style="gap: 1vh; height: 100vh; width: 100vw; position: absolute; top: 0; left: 0;">
             <div id="sessionTitleBar" class="flexRow flexAround crossCenter" style="width: 80vw; margin-top: 1vh; font-weight: bold; font-size: 3vh; color: var(--mbaLogoPurple); text-align: center;">
-                <div>Session : Halloween</div>
+                <a href="http://cicstudios.com" target="_blank"><img src="Logos/CIC_Black_Stamp.png" style="height: 5vh; max-height: 10vw;" /></a>
+                <div id="sessionTitle">Session : Halloween</div>
+                <a href="https://mba30.com" target="_blank"><img src="Logos/MBA_Black_Stamp.png" style="height: 5vh; max-height: 10vw;" /></a>
             </div>
             <!-- SESSION INFO -->
             <div id="infoContainer" class="flexRow flexBetween crossCenter" style="gap: 2%; width: 80vw;">
@@ -54,7 +56,7 @@
                 </div>
             </div>
             <!-- SESSION USERS -->
-            <div id="UsersBar" class="flexRow flexBetween crossCenter containerBorder" style="width: 80vw; margin-top: 1vh;">
+            <div id="UsersBar" class="flexRow flexBetween crossCenter" style="width: 80vw; margin-top: 1vh;">
                 <div id="UsersBarLeft" class="flexRow flexStart crossCenter" style = "color: var(--mbaBackBright);">
                     <div id="user1" class="flexRow flexBetween crossCenter margin5 userToggle userToggleFacilitator userToggleOn" style = "width: 10vw; cursor: pointer; background-color: var(--mbaLogoPurple);" onclick="ToggleUser(0)">
                         <div class="flexCol flexAround crossCenter selfFlexGrow">
@@ -76,10 +78,10 @@
                 </div>
             </div>
             <!-- SESSION TASKBOARD -->
-            <div id="boardContainer" class="flexRow flexStretch crossStart selfFlexGrow pad5" style="gap: 2%; min-height: 50vh; min-width: 80vw; margin-bottom: 1vh; overflow-x: auto; overflow-y: auto; font-weight: bold; font-size: max(min(2vh, 3.5vw), 16px); ">
-                <div id="colContainer1" class="flexCol flexCenter crossCenter selfFlexGrow selfCrossStretch" style="height: 100%; min-width: 20vw;">
+            <div id="boardContainer" class="flexRow flexStretch crossStart selfFlexGrow pad5" style="gap: 2%; min-height: 50vh; min-width: 90vw; margin-bottom: 1vh; overflow-x: auto; overflow-y: auto; font-weight: bold; font-size: max(min(2vh, 3.5vw), 16px); ">
+                <div id="colContainer1" class="flexCol flexCenter crossCenter selfFlexGrow selfCrossStretch">
                     Queue
-                    <div id="colBox1" class="flexCol flexStart crossCenter containerBorder selfFlexGrow selfCrossStretch" style="height: 100%; width: 100%;">
+                    <div id="colBox1" class="flexCol flexStart crossCenter containerWhite selfFlexGrow selfCrossStretch">
                         <div id="task1" class="flexCol flexStart crossCenter containerBorder margin5" style="min-height: 9vw; width: 18vw; background-color: var(--mbaLogoPurple); color: var(--mbaBackBright); font-size: 2vh;">
                             <div class = "flexCol flexCenter crossCenter selfCrossStretch taskBoxBorders"><div id="titleTask1">Transfer</div></div>
                             <div class="flexRow flexBetween crossCenter selfCrossStretch">
@@ -94,7 +96,6 @@
                             </div>
                             <div class="flexRow flexAround crossCenter selfCrossStretch taskBoxBorders" style="font-size: 1.125vh;">
                                 <div>Start:0</div>
-                                <div>Block:0</div>
                                 <div>Live:0</div>
                             </div>
                         </div>
@@ -112,15 +113,14 @@
                             </div>
                             <div class="flexRow flexAround crossCenter selfCrossStretch taskBoxBorders" style="font-size: 1.125vh;">
                                 <div>Start:0</div>
-                                <div>Block:0</div>
                                 <div>Live:0</div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div id="colContainer2" class="flexCol flexCenter crossCenter selfFlexGrow selfCrossStretch" style="height: 100%; min-width: 20vw;">
+                <div id="colContainer2" class="flexCol flexCenter crossCenter selfFlexGrow selfCrossStretch">
                     Doing
-                    <div id="colBox2" class="flexCol flexStart crossStart containerBorder selfFlexGrow selfCrossStretch" style="height: 100%; width: 100%;">
+                    <div id="colBox2" class="flexCol flexStart crossCenter containerWhite selfFlexGrow selfCrossStretch">
                         <div id="task1" class="flexCol flexStart crossCenter containerBorder margin5" style="min-height: 9vw; width: 18vw; background-color: var(--mbaLogoPurple); color: var(--mbaBackBright); font-size: 2vh;">
                             <div class="flexCol flexCenter crossCenter selfCrossStretch taskBoxBorders"><div id="titleTask1">Landing</div></div>
                             <div class="flexRow flexBetween crossCenter selfCrossStretch">
@@ -135,7 +135,6 @@
                             </div>
                             <div class="flexRow flexAround crossCenter selfCrossStretch taskBoxBorders" style="font-size: 1.125vh;">
                                 <div>Start:0</div>
-                                <div>Block:0</div>
                                 <div>Live:0</div>
                             </div>
                         </div>
@@ -153,21 +152,20 @@
                             </div>
                             <div class="flexRow flexAround crossCenter selfCrossStretch taskBoxBorders" style="font-size: 1.125vh;">
                                 <div>Start:0</div>
-                                <div>Block:0</div>
                                 <div>Live:0</div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div id="colContainer3" class="flexCol flexCenter crossCenter selfFlexGrow selfCrossStretch" style="height: 100%; min-width: 20vw;">
+                <div id="colContainer3" class="flexCol flexCenter crossCenter selfFlexGrow selfCrossStretch">
                     Testing
-                    <div id="colBox3" class="flexCol flexStart crossStart containerBorder selfFlexGrow selfCrossStretch" style="height: 100%; width: 100%;">
+                    <div id="colBox3" class="flexCol flexStart crossCenter containerWhite selfFlexGrow selfCrossStretch">
 
                     </div>
                 </div>
-                <div id="colContainer4" class="flexCol flexCenter crossCenter selfFlexGrow selfCrossStretch" style="height: 100%; min-width: 20vw;">
+                <div id="colContainer4" class="flexCol flexCenter crossCenter selfFlexGrow selfCrossStretch">
                     Done
-                    <div id="colBox4" class="flexCol flexStart crossStart containerBorder selfFlexGrow selfCrossStretch" style="height: 100%; width: 100%;">
+                    <div id="colBox4" class="flexCol flexStart crossCenter containerWhite selfFlexGrow selfCrossStretch">
 
                     </div>
                 </div>
@@ -284,7 +282,7 @@
 
         <!--<div id="midScreenMessageAlert" class="centerDiv textLoadingGlow" style="font-size: 2vw; font-weight: bolder; text-align: center; padding: 20px 20px;  overflow: hidden;  pointer-events: none; z-index: 1000;"></div>-->
         <script defer src="App/cic_FPS_Events&Msg.js"></script>
-        <script defer src="App/cic_GAS_Connector.js"></script>
+        <script defer src="App/cic_GAS_Connect.js"></script>
         <script defer src="App/app_Intro&Login.js"></script>
     </body>
 </html>
